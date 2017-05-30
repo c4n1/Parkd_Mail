@@ -1,0 +1,6 @@
+#Enter Gmail account below
+#Rename to config.ini
+
+[Gmail]
+Email = Address@gmail.com
+Pass = PasswordHere
