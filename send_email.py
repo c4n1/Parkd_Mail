@@ -29,8 +29,7 @@ def Send_Mail (user, password, to, Trucks_Dict):
         <head></head>
         <body>
             <p>
-                Hi!<br>
-                Your Curtin Parkd trucks today are:-<br>
+                Your Curtin Parkd trucks for today are:-<br>
                 %s
                 <br><br> More info can be found on the <a href="http://news.curtin.edu.au/events/parkd-curtin/">Curtin Parkd website</a>
 

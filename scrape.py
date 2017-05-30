@@ -13,8 +13,7 @@ import time # Get date
 
 #Page to request
 Site = "http://news.curtin.edu.au/events/parkd-curtin/"
-Area = "Tech Park"
-#Area = "Hexagon" #Can be useful to test multiple truck conditions
+
 
 #
 # Scrape
@@ -86,8 +85,7 @@ def Tech_Park_Trucks_With_URL (Truck_Websites, Tech_Park_Trucks):
                 Tech_Park_Trucks_With_URL[Truck] = Truck_Websites.get(Website_Key)
     return(Tech_Park_Trucks_With_URL)
 
-
-def main ():
+def return_trucks(Area):
     #Get Page and convert
     Page = requests.get(Site)
     Page_Tree = html.fromstring(Page.content)
@@ -107,12 +105,13 @@ def main ():
     #Match Trucks to URL's
     Todays_Trucks_With_Urls = Tech_Park_Trucks_With_URL(Truck_Websites, Tech_Park_Trucks)
 
-    #Print end result if run on it's own
-    if __name__ == "__main__":
-        print(Todays_Trucks_With_Urls)
-
     #Returns Dict
     return(Todays_Trucks_With_Urls)
+
+def main ():
+    Area = "Tech Park"
+    Trucks_Dict = return_trucks(Area)
+    print(Trucks_Dict)
 
 
 if __name__ == "__main__":
